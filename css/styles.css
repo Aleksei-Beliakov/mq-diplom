@@ -260,19 +260,19 @@
   
 .trend__grid {
   display: grid;
-  grid-template-columns: repeat(4, calc(100vw / 4 - (3 * 3px / 4)));
+  grid-template-columns: repeat(4, calc(100vw / 4 - (3 * 3px)));
   gap: 3px;
 }
 
 @media (max-width: 1199px) and (orientation: portrait) {
   .trend__grid {
-    grid-template-columns: repeat(2, calc(100vw / 2 - (1 * 3px / 2)));
+    grid-template-columns: repeat(2, calc(100vw / 2 - (1 * 3px)));
   }
 }
 
 @media (max-width: 640px) and (orientation: landscape) {
   .trend__grid {
-    grid-template-columns: repeat(2, calc(100vw / 2 - (1 * 3px / 2)));
+    grid-template-columns: repeat(2, calc(100vw / 2 - (1 * 3px)));
   }
 }
 
