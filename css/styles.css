@@ -59,6 +59,8 @@
   font-family: "OpenSans", "Arial", sans-serif;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  /*width: 100vw;*/
   margin: 0 auto;
 }
  
@@ -69,6 +71,10 @@
   background-position: center;
   background-size: cover;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
   z-index: 0;
   margin-bottom: 55px;
 }
@@ -118,6 +124,7 @@
   
 .header__logo-zone {
   width: 70.6vw;
+  max-width: 1170px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -260,19 +267,19 @@
   
 .trend__grid {
   display: grid;
-  grid-template-columns: repeat(4, calc(100vw / 4 - (3 * 3px)));
+  grid-template-columns: repeat(4, 1fr);
   gap: 3px;
 }
 
 @media (max-width: 1199px) and (orientation: portrait) {
   .trend__grid {
-    grid-template-columns: repeat(2, calc(100vw / 2 - (1 * 3px)));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 640px) and (orientation: landscape) {
   .trend__grid {
-    grid-template-columns: repeat(2, calc(100vw / 2 - (1 * 3px)));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -403,7 +410,13 @@
   }
 }
 
+.trend__card-title:hover {
+  color: rgb(181, 159, 91);
+}
+
 .content {
+  max-width: 1170px;
+  width: 70.6vw;
   display: flex;
   justify-content: space-between;
   margin: 60px 14.7vw 0;
@@ -412,6 +425,7 @@
 @media (max-width: 1199px) {
   .content {
     margin-top: 45px;
+    width: 91vw;
     margin-right: 4.5vw;
     margin-left: 4.5vw;
     margin-bottom: 25px;
@@ -421,6 +435,7 @@
 @media (max-width: 640px) {
   .content {
     flex-direction: column;
+    width: 91.6vw;
     margin-right: 4.2vw;
     margin-left: 4.2vw;
     margin-top: 45px;
@@ -428,6 +443,10 @@
 }
   
 /*main*/
+
+.main {
+  max-width: 777px;
+}
 
 .card {
   display: flex;
@@ -499,6 +518,7 @@
 
 .card__menu {
   display: flex;
+  flex-wrap: wrap;
 }
   
 .card__nav {
@@ -971,11 +991,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 3.3vw;
+  width: 70.6vw;
+  max-width: 1170px;
+  /*gap: 3.7vw;*/
 }
 
 @media (max-width: 1199px) {
   .shop__cards {
+    width: 91vw;
     gap: 3vw;
   }
 }
@@ -984,6 +1007,7 @@
   .shop__cards {
     flex-direction: column;
     align-items: center;
+    width: 91.6vw;
     gap: 7vw; /*25px*/
   }
 }
@@ -991,11 +1015,13 @@
 .shop__img {
   display: block;
   width: 18vw;
+  max-width: 300px;
 }
 
-@media (min-width: 641px) and (max-width: 1199px) {
+@media (max-width: 1199px) {
   .shop__img {
     width: 38vw;
+    max-width: none;
   }
 }
 
@@ -1010,12 +1036,14 @@
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  /*width: 1fr;*/
 }
 
 .shop__card-info {
   border: 3px solid rgb(181, 159, 91);
   height: 100%;
   width: 21vw;
+  max-width: 347px;
   margin-top: -2vw;
   padding: 3vw 1.35vw 1.8vw;
 }
@@ -1023,6 +1051,7 @@
 @media (max-width: 1199px) {
   .shop__card-info {
     width: 43.9vw;
+    max-width: none;
     margin-top: -4.2vw;
     padding: 6.7vw 2.5vw 3.8vw;
   }
@@ -1125,6 +1154,7 @@
   justify-content: center;
   padding: 30px 0;
   width: calc(100vw - 14.7vw * 2);
+  max-width: 1170px;
   background-color: rgb(244, 247, 246);
   margin: 0 14.7vw;
 }
@@ -1193,8 +1223,8 @@
 
 .popup {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   top: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.6);
@@ -1381,6 +1411,7 @@
   outline: none;
   margin-top: 8px;
   margin-bottom: 30px;
+  resize: none;
 }
 
 .popup__textarea-field:hover {
